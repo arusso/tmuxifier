@@ -24,7 +24,7 @@ if initialize_session "default"; then
   # load nagios log
   window_root "~/"
   new_window "nagios"
-  run_cmd "ssh nagios -c 'sudo tail -f /var/log/nagios/nagios.log'"
+  run_cmd "ssh nagios -t 'sudo tail -f /var/log/nagios/nagios.log'"
 
   # load my scratch space
   window_root "~/"
