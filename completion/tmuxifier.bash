@@ -12,3 +12,4 @@ _tmuxifier() {
 }
 
 complete -F _tmuxifier tmuxifier
+complete -F _tmuxifier mux
