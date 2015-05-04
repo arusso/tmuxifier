@@ -18,13 +18,12 @@ if initialize_session "default"; then
 
   # load irssi
   window_root "~/"
-  new_window "irssi"
-  run_cmd "irssi -c bobbie"
-
-  # load nagios log
-  window_root "~/"
-  new_window "nagios"
-  run_cmd "ssh nagios -t 'sudo tail -f /var/log/nagios/nagios.log'"
+  load_window "HorizontalSplit"
+  select_pane "0"
+  run_cmd "irssi -c ucb"
+  select_pane "1"
+  run_cmd "irssi -c arusso"
+  run_cmd "tmux rename-window -t $(tmux display-message -p '#I') irc"
 
   # load my scratch space
   window_root "~/"
